@@ -1,4 +1,4 @@
-# Studetn Registration Database
+# Student Registration Database
 In this project, my goal is to establish a database to store information of student and course registration.
 
 The student should provide the code of the course and the time or the section number.
