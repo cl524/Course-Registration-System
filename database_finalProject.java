@@ -103,53 +103,53 @@ public class database_finalProject extends JFrame
     			"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
     			"VALUES( \""+"CS610"+"\", \""+"001"+"\", \""+"DataStructure"+"\", \""+"MON"+"\", \""+"FMH110"+"\","
     			+ "\""+"Nassimi"+"\", \""+"Li"+"\", \""+"Alen"+"\", \""+1111+"\", \""+"CS"+"\", \""+2+"\")"
-    		);
+    		        );
 			conn.stmt.executeUpdate( 
 	    		"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
 	    		"VALUES( \""+"CS610"+"\", \""+"002"+"\", \""+"DataStructure"+"\", \""+"FRI"+"\", \""+"GITC3100"+"\","
 	    		+ "\""+"Obama"+"\", \""+"Kuo"+"\", \""+"William"+"\", \""+2222+"\", \""+"CS"+"\", \""+2+"\")"
-	    	);
+	    	        );
 			conn.stmt.executeUpdate( 
 		    	"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
 		    	"VALUES( \""+"CS630"+"\", \""+"001"+"\", \""+"OperatingSystem"+"\", \""+"MON"+"\", \""+"KUPF104"+"\","
 		    	+ "\""+"Hung"+"\", \""+"Yu"+"\", \""+"Kevin"+"\", \""+3333+"\", \""+"CS"+"\", \""+2+"\")"
-		    );
+		        );
 			conn.stmt.executeUpdate( 
 		    	"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
 		    	"VALUES( \""+"CS630"+"\", \""+"002"+"\", \""+"OperatingSystem"+"\", \""+"WED"+"\", \""+"KUPF208"+"\","
 		    	+ "\""+"Ai"+"\", \""+"Yang"+"\", \""+"Frank"+"\", \""+4444+"\", \""+"IS"+"\", \""+2+"\")"
-		    );
+		        );
 			conn.stmt.executeUpdate( 
 		    	"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
 		    	"VALUES( \""+"CS631"+"\", \""+"001"+"\", \""+"DataBaseManageMent"+"\", \""+"TUE"+"\", \""+"Distance Learning"+"\","
 		    	+ "\""+"Oria"+"\", \""+"Lin"+"\", \""+"Penny"+"\", \""+5555+"\", \""+"EE"+"\", \""+3+"\")"
-		    );
+		        );
 			conn.stmt.executeUpdate( 
 		    	"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
 		    	"VALUES( \""+"CS631"+"\", \""+"002"+"\", \""+"DataBaseManageMent"+"\", \""+"THR"+"\", \""+"KUPF210"+"\","
 		    	+ "\""+"Hossein"+"\", \""+"Chen"+"\", \""+"Grant"+"\", \""+7777+"\", \""+"CE"+"\", \""+3+"\")"
-		    );
+		        );
 			conn.stmt.executeUpdate( 
 		    	"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
 		    	"VALUES( \""+"CS656"+"\", \""+"001"+"\", \""+"InternetProtocol"+"\", \""+"WED"+"\", \""+"CKB220"+"\","
 		    	+ "\""+"Blank"+"\", \""+"Lin"+"\", \""+"Mike"+"\", \""+6666+"\", \""+"CHEM"+"\", \""+3+"\")"
-		    );
+		        );
 			conn.stmt.executeUpdate( 
 		    	"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
 		    	"VALUES( \""+"CS656"+"\", \""+"002"+"\", \""+"InternetProtocol"+"\", \""+"TUE"+"\", \""+"GITC4210"+"\","
 		    	+ "\""+"Wang"+"\", \""+"Yang"+"\", \""+"Frank"+"\", \""+4444+"\", \""+"IS"+"\", \""+2+"\")"
-		    );
+		        );
 			conn.stmt.executeUpdate( 
 		    	"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
 		    	"VALUES( \""+"CS506"+"\", \""+"001"+"\", \""+"DiscreteMath"+"\", \""+"WED"+"\", \""+"TIER114"+"\","
 		    	+ "\""+"Leung"+"\", \""+"Yu"+"\", \""+"Kevin"+"\", \""+3333+"\", \""+"CS"+"\", \""+2+"\")"
-		    );
+		        );
 			conn.stmt.executeUpdate( 
 		    	"INSERT INTO regi (course_num, sec_num, course_name, time, place, instructor, last_name, first_name, stu_id, major, year)" +
 		    	"VALUES( \""+"CS506"+"\", \""+"002"+"\", \""+"DiscreteMath"+"\", \""+"MON"+"\", \""+"CMP220"+"\","
 		    	+ "\""+"Yang"+"\", \""+"Chen"+"\", \""+"Grant"+"\", \""+7777+"\", \""+"CE"+"\", \""+3+"\")"
-		    );
-    	}
+		        );
+    	        }
 		catch (SQLException E) {
 			System.out.println("SQLException: " + E.getMessage());
 			System.out.println("SQLState:     " + E.getSQLState());
@@ -158,14 +158,14 @@ public class database_finalProject extends JFrame
 /*existing data*/		
 		
 		b1.addActionListener(new ActionListener(){/*registration button*/
-            public void actionPerformed(ActionEvent arg0){
+                   public void actionPerformed(ActionEvent arg0){
         		c1.show(cardpaneL1, "regi");
-            }
-        });
+                   }
+                });
 
 		b2.addActionListener(new ActionListener(){/*course list button*/
-            public void actionPerformed(ActionEvent arg0){
-            	try{            		
+                   public void actionPerformed(ActionEvent arg0){
+            	      try{            		
             		PreparedStatement queryusers = conn.conn.prepareStatement("Select * from regi where userid=?");
         			queryusers.setString(1, "theo");
             		ResultSet rs = queryusers.executeQuery("Select * from regi order by course_num, sec_num, last_name");
@@ -175,10 +175,10 @@ public class database_finalProject extends JFrame
                					rs.getString("time"),rs.getString("place"),rs.getString("instructor"),rs.getString("last_name"),rs.getString("first_name"),
                					rs.getString("stu_id"), rs.getString("major"),rs.getString("year"));
            				System.out.println();
-           			}
+           	        }
             		System.out.println();
             		System.out.println();
-            	}
+            	     }
         		catch (SQLException E) {
         			System.out.println("SQLException: " + E.getMessage());
         			System.out.println("SQLState:     " + E.getSQLState());
